@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "first_name": "Сергей",
+    "second_name": "Сергейев1",
+    "patronymic": "Сергеевич",
+    "equipment_amount": 2,
+    "equipment": [
+      [
+        "комп",
+        5000
+      ],
+      [
+        "мышь",
+        5000
+      ]
+    ],
+    "overall_cost": 10000
+  },
+  {
+    "id": 2,
+    "first_name": "Сергей",
+    "second_name": "Сергейев2",
+    "patronymic": "Сергеевич",
+    "equipment_amount": 2,
+    "equipment": [
+      [
+        "asd",
+        1000
+      ],
+      [
+        "basd",
+        500
+      ]
+    ],
+    "overall_cost": 1500
+  },
+  {
+    "id": 3,
+    "first_name": "Сергей",
+    "second_name": "Сергейев3",
+    "patronymic": "Сергеевич",
+    "equipment_amount": 2,
+    "equipment": [
+      [
+        "asd",
+        700
+      ],
+      [
+        "basd",
+        900
+      ]
+    ],
+    "overall_cost": 1600
+    },
+  {
+    "id": 4,
+    "first_name": "Сергей",
+    "second_name": "Сергейев4",
+    "patronymic": "Сергеевич",
+    "equipment_amount": 1,
+    "equipment": [
+      [
+        "asd",
+        5000
+      ]
+    ],
+    "overall_cost": 5000
+  }
+]
