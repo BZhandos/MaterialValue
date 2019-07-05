@@ -44,11 +44,11 @@
         </div>
         <div class="desk-owner__fio">
           <div>Фамилия:</div>
-          <input :placeholder= desk.first_name />
+          <input :placeholder= desk.second_name />
         </div>
           <div class="desk-owner__fio">
           <div>Отчество:  </div>
-          <input :placeholder= desk.first_name />
+          <input :placeholder= desk.patronymic />
         </div>
       </div>
       <table class="table-wrap to-left">
