@@ -33,56 +33,56 @@
         <button @click="nextPage">Next</button>
       </p> page={{currentPage}}
 
-
-    <div
-            v-if="deskShown"
-            class="desk">
-      <div class="desk-owner">
-        <div class="desk-owner__fio">
-          <div>Имя:</div>
-          <input :placeholder= desk.first_name />
-        </div>
-        <div class="desk-owner__fio">
-          <div>Фамилия:</div>
-          <input :placeholder= desk.second_name />
-        </div>
+  <transition name="slide">>
+      <div
+              v-if="deskShown"
+              class="desk">
+        <div class="desk-owner">
           <div class="desk-owner__fio">
-          <div>Отчество:  </div>
-          <input :placeholder= desk.patronymic />
+            <div>Имя:</div>
+            <input :placeholder= desk.first_name />
+          </div>
+          <div class="desk-owner__fio">
+            <div>Фамилия:</div>
+            <input :placeholder= desk.second_name />
+          </div>
+            <div class="desk-owner__fio">
+            <div>Отчество:  </div>
+            <input :placeholder= desk.patronymic />
+          </div>
+        </div>
+        <table class="table-wrap to-left">
+          <thead>
+          <tr class="table-wrap__header">
+            <th>№</th>
+            <th>Название</th>
+            <th>Стоимость</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr
+                  class="table-wrap__list"
+                  v-for="(data, index) in desk.equipment"
+
+          >
+            <td>{{ index+1}}</td>
+            <td><input :placeholder= data[0] /></td>
+            <td><input :placeholder= data[1] /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Итого</td>
+            <td>{{desk.overall_cost}}</td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="desk-manipulate">
+          <button v-if="" class="desk-manipulate__edit">Edit</button>
+          <button class="desk-manipulate__save">Save</button>
+          <button @click="deskShown=false" class="desk-manipulate__cancel">Cancel</button>
         </div>
       </div>
-      <table class="table-wrap to-left">
-        <thead>
-        <tr class="table-wrap__header">
-          <th>№</th>
-          <th>Название</th>
-          <th>Стоимость</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr
-                class="table-wrap__list"
-                v-for="(data, index) in desk.equipment"
-
-        >
-          <td>{{ index+1}}</td>
-          <td><input :placeholder= data[0] /></td>
-          <td><input :placeholder= data[1] /></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Итого</td>
-          <td>{{desk.overall_cost}}</td>
-        </tr>
-        </tbody>
-      </table>
-      <div class="desk-manipulate">
-        <button v-if="" class="desk-manipulate__edit">Edit</button>
-        <button class="desk-manipulate__save">Save</button>
-        <button class="desk-manipulate__cancel">Cancel</button>
-      </div>
-    </div>
-
+  </transition>
   </div>
 </template>
 
@@ -241,5 +241,27 @@ export default {
   }
   .desk-manipulate__cancel {
     background-color: #f44336;
+  }
+  .slide-enter-active {
+    animation: slide-in 0.5s ease-out forwards;
+  }
+  .slide-leave-active {
+    animation: slide-out 0.5s ease-out forwards;
+  }
+  @keyframes slide-in {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slide-out {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
   }
 </style>
