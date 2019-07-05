@@ -99,7 +99,7 @@ export default {
       list: JsonData,
       currentSort:'name',
       currentSortDir:'asc',
-      pageSize: 4,
+      pageSize: 3,
       currentPage :1,
       choosen: null,
       desk: null,
